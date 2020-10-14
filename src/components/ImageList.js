@@ -1,11 +1,11 @@
 import React from 'react';
 
 const ImageList = ({ images }) => {
-
+  console.log(images)
   return (
     <div>
-      {images.map((image) => (
-        <img alt='unsplash' key={image.urls.regular} src={image.urls.regular} />
+      {images.map(({ description, id, urls }) => (
+        <img alt={description} key={id} src={urls.regular} />
       ))}
     </div>
   );
